@@ -107,8 +107,10 @@ class T extends Thread {
       System.out.println("Valor de g " + g.get() );
       
       while(g.get() < a.tamanho()) {
-         this.c.alterar(g.get(), a.get(g.get())+b.get(g.get()));
+         int global;
+         global = g.get();
          g.inc();
+         this.c.alterar(global, a.get(global)+b.get(global));
       }
       System.out.println("Thread " + this.id + " terminou!"); 
    }
